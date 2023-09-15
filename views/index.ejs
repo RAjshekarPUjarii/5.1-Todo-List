@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+    <div class="box">
+        <div class="todo-list">
+            <% if(locals.day){%>
+                <h1>
+                    <%= day + ',  ' + month + ' ' + date %>
+                </h1>
+                <% }else{ %>
+                    <h1>
+                        <%= pageTitle %>
+                    </h1>
+                    <% } %>
+                        <% for (let i=0; i < listItems.length; i++) { %>
+                            <div class="item">
+                                <input type="checkbox" class="ipt-check">
+                                <p>
+                                    <%= listItems[i] %>
+                                </p>
+                            </div>
+                            <% } %>
+        </div>
+
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off" required />
+
+            <button type="submit" name="list" value="<%= pageTitle === 'Work List' ? 'work' : 'default' %>">+</button>
+
+        </form>
+    </div>
+    <%- include("partials/footer.ejs") %>
