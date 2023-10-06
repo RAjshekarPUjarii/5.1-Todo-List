@@ -39,6 +39,7 @@ h1 {
 
   font-weight: bold;
   text-align: center;
+  
 
 }
 
@@ -114,7 +115,7 @@ input[type="text"] {
 
 .box {
   max-width: 400px;
-  margin: 50px auto;
+  margin:50px auto;
   background: white;
   border-radius: 5px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
@@ -149,6 +150,7 @@ button {
   font-size: 30px;
   border-width: 0;
   justify-content: space-around;
+  margin-right: 20px;
 }
 
 .button:hover {
@@ -162,7 +164,9 @@ footer {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 2rem;
+  margin: auto;
 }
+
 
 /* media query */
 @media (max-width: 768px) {

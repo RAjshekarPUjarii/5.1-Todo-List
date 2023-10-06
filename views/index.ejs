@@ -5,25 +5,23 @@
                 <h1>
                     <%= day + ',  ' + month + ' ' + date %>
                 </h1>
-                <% }else{ %>
-                    <h1>
-                        <%= pageTitle %>
-                    </h1>
-                    <% } %>
-                        <% for (let i=0; i < listItems.length; i++) { %>
-                            <div class="item">
-                                <input type="checkbox" class="ipt-check">
-                                <p>
-                                    <%= listItems[i] %>
-                                </p>
-                            </div>
-                            <% } %>
+                 <% } %>
+                 <form action="/delete"method="post">
+                    <%listItems.forEach((item)=>{ %>
+                        <div class="item">
+                            <input type="checkbox" name="checkbox"value="<%= item._id%>" onchange="this.form.submit();" class="ipt-check">
+                            <p>
+                                <%= item.name %>
+                            </p>
+                        </div>
+                   <% })%>
+                </form>
         </div>
 
         <form class="item" action="/" method="post">
             <input type="text" name="newItem" placeholder="New Item" autocomplete="off" required />
 
-            <button type="submit" name="list" value="<%= pageTitle === 'Work List' ? 'work' : 'default' %>">+</button>
+            <button type="submit" name="list" value="<%= pageTitle === 'Work List' ? 'work' : 'work' %>">+</button>
 
         </form>
     </div>
